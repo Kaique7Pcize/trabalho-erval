@@ -1,27 +1,28 @@
-# Função para ler um vetor de 8 posições
-def ler_vetor():
+# Função para calcular o quadrado das componentes do vetor
+def calcular_quadrados(vetor):
+    quadrados = [x ** 2 for x in vetor]
+    return quadrados
+
+# Função para ler um conjunto de números reais e armazená-lo em um vetor
+def ler_vetor(tamanho):
     vetor = []
-    for i in range(8):
-        elemento = int(input("Digite o valor para a posição {}: ".format(i)))
+    for i in range(tamanho):
+        elemento = float(input("Digite o {}º número real: ".format(i + 1)))
         vetor.append(elemento)
     return vetor
 
-# Função para calcular a soma dos valores nas posições X e Y
-def calcular_soma(vetor, x, y):
-    soma = vetor[x] + vetor[y]
-    return soma
+# Função para imprimir um vetor
+def imprimir_vetor(vetor):
+    print("Vetor:", vetor)
 
-# Ler o vetor de 8 posições
-vetor = ler_vetor()
+# Ler um conjunto de números reais e armazená-lo em um vetor
+vetor_original = ler_vetor(10)
 
-# Ler os valores de X e Y
-x = int(input("Digite o valor de X (entre 0 e 7): "))
-y = int(input("Digite o valor de Y (entre 0 e 7): "))
+# Calcular o quadrado das componentes do vetor
+vetor_quadrados = calcular_quadrados(vetor_original)
 
-# Verificar se os valores de X e Y estão dentro do intervalo permitido
-if x < 0 or x > 7 or y < 0 or y > 7:
-    print("Valores de X e Y devem estar entre 0 e 7.")
-else:
-    # Calcular a soma dos valores nas posições X e Y
-    soma = calcular_soma(vetor, x, y)
-    print("A soma dos valores nas posições {} e {} é: {}".format(x, y, soma))
+# Imprimir os conjuntos
+print("Conjunto original:")
+imprimir_vetor(vetor_original)
+print("Conjunto dos quadrados:")
+imprimir_vetor(vetor_quadrados)
