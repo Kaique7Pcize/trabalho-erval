@@ -1,0 +1,27 @@
+# Função para ler um vetor de 8 posições
+def ler_vetor():
+    vetor = []
+    for i in range(8):
+        elemento = int(input("Digite o valor para a posição {}: ".format(i)))
+        vetor.append(elemento)
+    return vetor
+
+# Função para calcular a soma dos valores nas posições X e Y
+def calcular_soma(vetor, x, y):
+    soma = vetor[x] + vetor[y]
+    return soma
+
+# Ler o vetor de 8 posições
+vetor = ler_vetor()
+
+# Ler os valores de X e Y
+x = int(input("Digite o valor de X (entre 0 e 7): "))
+y = int(input("Digite o valor de Y (entre 0 e 7): "))
+
+# Verificar se os valores de X e Y estão dentro do intervalo permitido
+if x < 0 or x > 7 or y < 0 or y > 7:
+    print("Valores de X e Y devem estar entre 0 e 7.")
+else:
+    # Calcular a soma dos valores nas posições X e Y
+    soma = calcular_soma(vetor, x, y)
+    print("A soma dos valores nas posições {} e {} é: {}".format(x, y, soma))
