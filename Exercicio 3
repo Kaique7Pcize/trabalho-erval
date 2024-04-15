@@ -1,0 +1,28 @@
+# Função para calcular o quadrado das componentes do vetor
+def calcular_quadrados(vetor):
+    quadrados = [x ** 2 for x in vetor]
+    return quadrados
+
+# Função para ler um conjunto de números reais e armazená-lo em um vetor
+def ler_vetor(tamanho):
+    vetor = []
+    for i in range(tamanho):
+        elemento = float(input("Digite o {}º número real: ".format(i + 1)))
+        vetor.append(elemento)
+    return vetor
+
+# Função para imprimir um vetor
+def imprimir_vetor(vetor):
+    print("Vetor:", vetor)
+
+# Ler um conjunto de números reais e armazená-lo em um vetor
+vetor_original = ler_vetor(10)
+
+# Calcular o quadrado das componentes do vetor
+vetor_quadrados = calcular_quadrados(vetor_original)
+
+# Imprimir os conjuntos
+print("Conjunto original:")
+imprimir_vetor(vetor_original)
+print("Conjunto dos quadrados:")
+imprimir_vetor(vetor_quadrados)
