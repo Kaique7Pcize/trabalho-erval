@@ -1,23 +1,35 @@
-# Função para ler um vetor de 10 posições
-def ler_vetor():
+# Função para receber um vetor com 10 posições do usuário
+def receber_vetor():
     vetor = []
     for i in range(10):
-        elemento = int(input("Digite o valor para a posição {}: ".format(i)))
+        elemento = float(input(f"Digite o valor para a posição {i+1}: "))
         vetor.append(elemento)
     return vetor
 
-# Função para encontrar o maior e o menor elemento do vetor
-def encontrar_maior_menor(vetor):
-    maior = max(vetor)
-    menor = min(vetor)
-    return maior, menor
+# Função para encontrar o maior elemento do vetor
+def encontrar_maior(vetor):
+    maior = vetor[0]
+    for elemento in vetor:
+        if elemento > maior:
+            maior = elemento
+    return maior
 
-# Ler o vetor de 10 posições
-vetor = ler_vetor()
+# Função para encontrar o menor elemento do vetor
+def encontrar_menor(vetor):
+    menor = vetor[0]
+    for elemento in vetor:
+        if elemento < menor:
+            menor = elemento
+    return menor
 
-# Encontrar o maior e o menor elemento do vetor
-maior, menor = encontrar_maior_menor(vetor)
+# Recebendo o vetor com 10 posições do usuário
+print("Digite os valores para o vetor:")
+vetor = receber_vetor()
 
-# Imprimir o resultado
-print("O maior elemento do vetor é:", maior)
-print("O menor elemento do vetor é:", menor)
+# Encontrando o maior e o menor elemento do vetor
+maior = encontrar_maior(vetor)
+menor = encontrar_menor(vetor)
+
+# Imprimindo o maior e o menor elemento do vetor
+print(f"O maior elemento do vetor é: {maior}")
+print(f"O menor elemento do vetor é: {menor}")
