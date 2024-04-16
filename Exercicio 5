@@ -2,23 +2,24 @@
 def ler_vetor():
     vetor = []
     for i in range(10):
-        elemento = int(input("Digite o valor para a posição {}: ".format(i)))
+        elemento = int(input(f"Digite o valor para a posição {i+1}: "))
         vetor.append(elemento)
     return vetor
 
-# Função para contar quantos valores pares um vetor possui
+# Função para contar quantos valores pares há no vetor
 def contar_pares(vetor):
-    count = 0
+    contador_pares = 0
     for elemento in vetor:
         if elemento % 2 == 0:
-            count += 1
-    return count
+            contador_pares += 1
+    return contador_pares
 
-# Ler o vetor de 10 posições
+# Lendo o vetor de 10 posições
+print("Digite os valores para o vetor:")
 vetor = ler_vetor()
 
-# Contar quantos valores pares o vetor possui
+# Contando quantos valores pares o vetor possui
 pares = contar_pares(vetor)
 
-# Escrever o resultado
-print("O vetor possui {} valores pares.".format(pares))
+# Escrevendo a quantidade de valores pares no vetor
+print(f"O vetor possui {pares} valor(es) par(es).")
